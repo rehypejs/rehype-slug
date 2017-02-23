@@ -10,6 +10,7 @@ test('slug', function (t) {
   t.plan(2);
 
   rehype()
+    .data('settings', {fragment: true})
     .use(slug)
     .process([
       '<section>',
@@ -20,7 +21,7 @@ test('slug', function (t) {
       '  <h5>elit</h5>',
       '  <p>sed</p>',
       '</section>'
-    ].join('\n'), {fragment: true}, function (err, file) {
+    ].join('\n'), function (err, file) {
       t.ifErr(err, 'shouldn’t throw');
 
       t.equal(

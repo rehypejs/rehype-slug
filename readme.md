@@ -31,10 +31,13 @@ var slug = require('rehype-slug');
 
 var doc = fs.readFileSync('fragment.html');
 
-rehype().use(slug).process(doc, {fragment: true}, function (err, file) {
-  if (err) throw err;
-  console.log(String(file));
-});
+rehype()
+  .data('settings', {fragment: true})
+  .use(slug)
+  .process(doc, function (err, file) {
+    if (err) throw err;
+    console.log(String(file));
+  });
 ```
 
 Now, running `node example` yields:
