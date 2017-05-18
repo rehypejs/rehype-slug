@@ -12,7 +12,7 @@ npm install rehype-slug
 
 ## Usage
 
-Say we have the following fragment:
+Say we have the following file, `fragment.html`:
 
 ```html
 <h1>Lorem ipsum 😪</h1>
@@ -25,16 +25,14 @@ Say we have the following fragment:
 And our script, `example.js`, looks as follows:
 
 ```javascript
-var fs = require('fs');
+var vfile = require('to-vfile');
 var rehype = require('rehype');
 var slug = require('rehype-slug');
-
-var doc = fs.readFileSync('fragment.html');
 
 rehype()
   .data('settings', {fragment: true})
   .use(slug)
-  .process(doc, function (err, file) {
+  .process(vfile.readSync('fragment.html'), function (err, file) {
     if (err) throw err;
     console.log(String(file));
   });
