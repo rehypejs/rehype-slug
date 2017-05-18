@@ -58,7 +58,8 @@ Uses [**github-slugger**][ghslug] (thus creating GitHub style `id`s).
 
 ## Related
 
-*   [**remark-slug**](https://github.com/wooorm/remark-slug).
+*   [`remark-slug`](https://github.com/wooorm/remark-slug)
+    — Add slugs to headings in markdown
 
 ## License
 
