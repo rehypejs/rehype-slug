@@ -1,11 +1,9 @@
 'use strict';
 
-/* Dependencies. */
 var test = require('tape');
 var rehype = require('rehype');
 var slug = require('./');
 
-/* Tests. */
 test('slug', function (t) {
   t.plan(2);
 
