@@ -25,14 +25,14 @@ Say we have the following file, `fragment.html`:
 And our script, `example.js`, looks as follows:
 
 ```javascript
-var vfile = require('to-vfile');
+var fs = require('fs');
 var rehype = require('rehype');
 var slug = require('rehype-slug');
 
 rehype()
   .data('settings', {fragment: true})
   .use(slug)
-  .process(vfile.readSync('fragment.html'), function (err, file) {
+  .process(fs.readFileSync('fragment.html'), function (err, file) {
     if (err) throw err;
     console.log(String(file));
   });
