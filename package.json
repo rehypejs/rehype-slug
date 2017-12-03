@@ -9,8 +9,8 @@
     "slug",
     "id"
   ],
-  "repository": "https://github.com/wooorm/rehype-slug",
-  "bugs": "https://github.com/wooorm/rehype-slug/issues",
+  "repository": "rehypejs/rehype-slug",
+  "bugs": "https://github.com/rehypejs/rehype-slug/issues",
   "author": "Titus Wormer <tituswormer@gmail.com> (http://wooorm.com)",
   "contributors": [
     "Titus Wormer <tituswormer@gmail.com> (http://wooorm.com)"

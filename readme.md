@@ -67,13 +67,13 @@ Uses [**github-slugger**][ghslug] (thus creating GitHub style `id`s).
 
 <!-- Definitions -->
 
-[travis-badge]: https://img.shields.io/travis/wooorm/rehype-slug.svg
+[travis-badge]: https://img.shields.io/travis/rehypejs/rehype-slug.svg
 
-[travis]: https://travis-ci.org/wooorm/rehype-slug
+[travis]: https://travis-ci.org/rehypejs/rehype-slug
 
-[codecov-badge]: https://img.shields.io/codecov/c/github/wooorm/rehype-slug.svg
+[codecov-badge]: https://img.shields.io/codecov/c/github/rehypejs/rehype-slug.svg
 
-[codecov]: https://codecov.io/github/wooorm/rehype-slug
+[codecov]: https://codecov.io/github/rehypejs/rehype-slug
 
 [npm]: https://docs.npmjs.com/cli/install
 
@@ -81,6 +81,6 @@ Uses [**github-slugger**][ghslug] (thus creating GitHub style `id`s).
 
 [author]: http://wooorm.com
 
-[rehype]: https://github.com/wooorm/rehype
+[rehype]: https://github.com/rehypejs/rehype
 
 [ghslug]: https://github.com/Flet/github-slugger
