@@ -61,6 +61,13 @@ Uses [**github-slugger**][ghslug] (thus creating GitHub style `id`s).
 *   [`remark-slug`](https://github.com/wooorm/remark-slug)
     — Add slugs to headings in markdown
 
+## Contribute
+
+See [`contribute.md` in `rehypejs/rehype`][contribute] for ways to get started.
+
+This organisation has a [Code of Conduct][coc].  By interacting with this
+repository, organisation, or community you agree to abide by its terms.
+
 ## License
 
 [MIT][license] © [Titus Wormer][author]
@@ -84,3 +91,7 @@ Uses [**github-slugger**][ghslug] (thus creating GitHub style `id`s).
 [rehype]: https://github.com/rehypejs/rehype
 
 [ghslug]: https://github.com/Flet/github-slugger
+
+[contribute]: https://github.com/rehypejs/rehype/blob/master/contributing.md
+
+[coc]: https://github.com/rehypejs/rehype/blob/master/code-of-conduct.md
