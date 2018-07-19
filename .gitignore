@@ -5,3 +5,4 @@ coverage/
 node_modules/
 rehype-slug.js
 rehype-slug.min.js
+yarn.lock
