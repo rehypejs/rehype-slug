@@ -25,17 +25,17 @@ Say we have the following file, `fragment.html`:
 And our script, `example.js`, looks as follows:
 
 ```javascript
-var fs = require('fs');
-var rehype = require('rehype');
-var slug = require('rehype-slug');
+var fs = require('fs')
+var rehype = require('rehype')
+var slug = require('rehype-slug')
 
 rehype()
   .data('settings', {fragment: true})
   .use(slug)
-  .process(fs.readFileSync('fragment.html'), function (err, file) {
-    if (err) throw err;
-    console.log(String(file));
-  });
+  .process(fs.readFileSync('fragment.html'), function(err, file) {
+    if (err) throw err
+    console.log(String(file))
+  })
 ```
 
 Now, running `node example` yields:
