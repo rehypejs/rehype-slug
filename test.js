@@ -2,7 +2,7 @@
 
 var test = require('tape');
 var rehype = require('rehype');
-var slug = require('./');
+var slug = require('.');
 
 test('slug', function (t) {
   t.plan(2);
