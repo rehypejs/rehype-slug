@@ -1,4 +1,9 @@
-# rehype-slug [![Build Status][travis-badge]][travis] [![Coverage Status][codecov-badge]][codecov]
+# rehype-slug
+
+[![Build][build-badge]][build]
+[![Coverage][coverage-badge]][coverage]
+[![Downloads][downloads-badge]][downloads]
+[![Chat][chat-badge]][chat]
 
 Add `id`s to headings with [**rehype**][rehype].
 
@@ -75,13 +80,21 @@ repository, organisation, or community you agree to abide by its terms.
 
 <!-- Definitions -->
 
-[travis-badge]: https://img.shields.io/travis/rehypejs/rehype-slug.svg
+[build-badge]: https://img.shields.io/travis/rehypejs/rehype-slug.svg
 
-[travis]: https://travis-ci.org/rehypejs/rehype-slug
+[build]: https://travis-ci.org/rehypejs/rehype-slug
 
-[codecov-badge]: https://img.shields.io/codecov/c/github/rehypejs/rehype-slug.svg
+[coverage-badge]: https://img.shields.io/codecov/c/github/rehypejs/rehype-slug.svg
 
-[codecov]: https://codecov.io/github/rehypejs/rehype-slug
+[coverage]: https://codecov.io/github/rehypejs/rehype-slug
+
+[downloads-badge]: https://img.shields.io/npm/dm/rehype-slug.svg
+
+[downloads]: https://www.npmjs.com/package/rehype-slug
+
+[chat-badge]: https://img.shields.io/badge/join%20the%20community-on%20spectrum-7b16ff.svg
+
+[chat]: https://spectrum.chat/unified/rehype
 
 [npm]: https://docs.npmjs.com/cli/install
 
