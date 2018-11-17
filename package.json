@@ -1,6 +1,6 @@
 {
   "name": "rehype-slug",
-  "version": "2.0.1",
+  "version": "2.0.2",
   "description": "Add id attributes to headings",
   "license": "MIT",
   "keywords": [
