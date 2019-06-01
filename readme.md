@@ -3,19 +3,22 @@
 [![Build][build-badge]][build]
 [![Coverage][coverage-badge]][coverage]
 [![Downloads][downloads-badge]][downloads]
+[![Size][size-badge]][size]
+[![Sponsors][sponsors-badge]][collective]
+[![Backers][backers-badge]][collective]
 [![Chat][chat-badge]][chat]
 
-Add `id`s to headings with [**rehype**][rehype].
+[**rehype**][rehype] plugin to add `id`s to headings.
 
-## Installation
+## Install
 
 [npm][]:
 
-```bash
+```sh
 npm install rehype-slug
 ```
 
-## Usage
+## Use
 
 Say we have the following file, `fragment.html`:
 
@@ -29,7 +32,7 @@ Say we have the following file, `fragment.html`:
 
 And our script, `example.js`, looks as follows:
 
-```javascript
+```js
 var fs = require('fs')
 var rehype = require('rehype')
 var slug = require('rehype-slug')
@@ -57,9 +60,9 @@ Now, running `node example` yields:
 
 ### `rehype().use(slug)`
 
-Adds `id` properties to h1-h6 headings which don’t already have one.
+Add `id` properties to h1-h6 headings that don’t already have one.
 
-Uses [**github-slugger**][ghslug] (thus creating GitHub style `id`s).
+Uses [**github-slugger**][ghslug] to create GitHub style `id`s.
 
 ## Related
 
@@ -68,11 +71,13 @@ Uses [**github-slugger**][ghslug] (thus creating GitHub style `id`s).
 
 ## Contribute
 
-See [`contributing.md` in `rehypejs/rehype`][contribute] for ways to get
-started.
+See [`contributing.md`][contributing] in [`rehypejs/.github`][health] for ways
+to get started.
+See [`support.md`][support] for ways to get help.
 
-This organisation has a [Code of Conduct][coc].  By interacting with this
-repository, organisation, or community you agree to abide by its terms.
+This project has a [Code of Conduct][coc].
+By interacting with this repository, organisation, or community you agree to
+abide by its terms.
 
 ## License
 
@@ -92,11 +97,29 @@ repository, organisation, or community you agree to abide by its terms.
 
 [downloads]: https://www.npmjs.com/package/rehype-slug
 
+[size-badge]: https://img.shields.io/bundlephobia/minzip/rehype-slug.svg
+
+[size]: https://bundlephobia.com/result?p=rehype-slug
+
+[sponsors-badge]: https://opencollective.com/unified/sponsors/badge.svg
+
+[backers-badge]: https://opencollective.com/unified/backers/badge.svg
+
+[collective]: https://opencollective.com/unified
+
 [chat-badge]: https://img.shields.io/badge/join%20the%20community-on%20spectrum-7b16ff.svg
 
 [chat]: https://spectrum.chat/unified/rehype
 
 [npm]: https://docs.npmjs.com/cli/install
+
+[health]: https://github.com/rehypejs/.github
+
+[contributing]: https://github.com/rehypejs/.github/blob/master/contributing.md
+
+[support]: https://github.com/rehypejs/.github/blob/master/support.md
+
+[coc]: https://github.com/rehypejs/.github/blob/master/code-of-conduct.md
 
 [license]: license
 
@@ -105,7 +128,3 @@ repository, organisation, or community you agree to abide by its terms.
 [rehype]: https://github.com/rehypejs/rehype
 
 [ghslug]: https://github.com/Flet/github-slugger
-
-[contribute]: https://github.com/rehypejs/rehype/blob/master/contributing.md
-
-[coc]: https://github.com/rehypejs/rehype/blob/master/code-of-conduct.md
