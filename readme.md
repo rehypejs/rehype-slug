@@ -64,6 +64,16 @@ Add `id` properties to h1-h6 headings that don’t already have one.
 
 Uses [**github-slugger**][ghslug] to create GitHub style `id`s.
 
+## Security
+
+Use of `rehype-slug` can open you up to a [cross-site scripting (XSS)][xss]
+attack as it sets `id` attributes on headings.
+In a browser, elements are retrievable by `id` with JavaScript and CSS.
+If a user injects a heading that slugs to an `id` you are already using,
+the user content may impersonate the website.
+
+Always be wary with user input and use [`rehype-sanitize`][sanitize].
+
 ## Related
 
 *   [`remark-slug`](https://github.com/wooorm/remark-slug)
@@ -128,3 +138,7 @@ abide by its terms.
 [rehype]: https://github.com/rehypejs/rehype
 
 [ghslug]: https://github.com/Flet/github-slugger
+
+[xss]: https://en.wikipedia.org/wiki/Cross-site_scripting
+
+[sanitize]: https://github.com/rehypejs/rehype-sanitize
