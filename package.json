@@ -1,12 +1,14 @@
 {
   "name": "rehype-slug",
   "version": "2.0.3",
-  "description": "rehype plugin to add id attributes to headings",
+  "description": "rehype plugin to add `id` attributes to headings",
   "license": "MIT",
   "keywords": [
     "unified",
     "rehype",
+    "rehype-plugin",
     "plugin",
+    "html",
     "heading",
     "slug",
     "id"
