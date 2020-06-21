@@ -17,7 +17,7 @@ function slug() {
 function transformer(tree) {
   slugs.reset()
 
-  visit(tree, 'element', function(node) {
+  visit(tree, 'element', function (node) {
     if (is(node, headings) && !has(node, 'id')) {
       node.properties.id = slugs.slug(toString(node))
     }

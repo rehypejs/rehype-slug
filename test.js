@@ -4,7 +4,7 @@ var test = require('tape')
 var rehype = require('rehype')
 var slug = require('.')
 
-test('slug', function(t) {
+test('slug', function (t) {
   t.plan(2)
 
   rehype()
@@ -21,7 +21,7 @@ test('slug', function(t) {
         '  <p>sed</p>',
         '</section>'
       ].join('\n'),
-      function(err, file) {
+      function (err, file) {
         t.ifErr(err, 'shouldn’t throw')
 
         t.equal(
