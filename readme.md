@@ -95,9 +95,9 @@ abide by its terms.
 
 <!-- Definitions -->
 
-[build-badge]: https://img.shields.io/travis/rehypejs/rehype-slug.svg
+[build-badge]: https://github.com/rehypejs/rehype-slug/workflows/main/badge.svg
 
-[build]: https://travis-ci.org/rehypejs/rehype-slug
+[build]: https://github.com/rehypejs/rehype-slug/actions
 
 [coverage-badge]: https://img.shields.io/codecov/c/github/rehypejs/rehype-slug.svg
 
