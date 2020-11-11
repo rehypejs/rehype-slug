@@ -48,9 +48,9 @@
     "xo": "^0.34.0"
   },
   "scripts": {
-    "format": "remark . -qfo && prettier . --write && xo --fix",
-    "build-bundle": "browserify index.js -s rehypeSlug > rehype-slug.js",
-    "build-mangle": "browserify index.js -s rehypeSlug -p tinyify > rehype-slug.min.js",
+    "format": "remark . -qfo && prettier . -w --loglevel warn && xo --fix",
+    "build-bundle": "browserify index.js -s rehypeSlug -o rehype-slug.js",
+    "build-mangle": "browserify index.js -s rehypeSlug -o rehype-slug.min.js -p tinyify",
     "build": "npm run build-bundle && npm run build-mangle",
     "test-api": "node test",
     "test-coverage": "nyc --reporter lcov tape test.js",
@@ -61,10 +61,7 @@
     "check-coverage": true,
     "lines": 100,
     "functions": 100,
-    "branches": 100,
-    "ignores": [
-      "**/*.ts"
-    ]
+    "branches": 100
   },
   "prettier": {
     "tabWidth": 2,
