@@ -31,10 +31,10 @@
   ],
   "dependencies": {
     "github-slugger": "^1.1.1",
-    "hast-util-has-property": "^1.0.0",
-    "hast-util-heading-rank": "^1.0.0",
-    "hast-util-to-string": "^1.0.0",
-    "unist-util-visit": "^2.0.0"
+    "hast-util-has-property": "^2.0.0",
+    "hast-util-heading-rank": "^2.0.0",
+    "hast-util-to-string": "^2.0.0",
+    "unist-util-visit": "^4.0.0"
   },
   "devDependencies": {
     "c8": "^7.0.0",
