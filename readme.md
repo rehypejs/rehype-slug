@@ -12,6 +12,9 @@
 
 ## Install
 
+This package is [ESM only](https://gist.github.com/sindresorhus/a39789f98801d908bbc7ff3ecc99d99c):
+Node 12+ is needed to use it and it must be `import`ed instead of `require`d.
+
 [npm][]:
 
 ```sh
@@ -33,15 +36,17 @@ Say we have the following file, `fragment.html`:
 And our script, `example.js`, looks as follows:
 
 ```js
-var fs = require('fs')
-var rehype = require('rehype')
-var slug = require('rehype-slug')
+import fs from 'node:fs'
+import {rehype} from 'rehype'
+import slug from 'rehype-slug'
+
+const buf = fs.readFileSync('fragment.html')
 
 rehype()
   .data('settings', {fragment: true})
   .use(slug)
-  .process(fs.readFileSync('fragment.html'), function(err, file) {
-    if (err) throw err
+  .process(buf)
+  .then((file) => {
     console.log(String(file))
   })
 ```
@@ -58,7 +63,10 @@ Now, running `node example` yields:
 
 ## API
 
-### `rehype().use(slug)`
+This package exports no identifiers.
+The default export is `rehypeSlug`.
+
+### `unified().use(rehypeSlug)`
 
 Add `id` properties to h1-h6 headings that don’t already have one.
 
