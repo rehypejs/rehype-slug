@@ -13,7 +13,7 @@ export default function rehypeSlug() {
 function transformer(tree) {
   slugs.reset()
 
-  visit(tree, 'element', function (node) {
+  visit(tree, 'element', (node) => {
     if (headingRank(node) && !hasProperty(node, 'id')) {
       node.properties.id = slugs.slug(toString(node))
     }

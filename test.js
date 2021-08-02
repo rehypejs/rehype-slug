@@ -2,7 +2,7 @@ import test from 'tape'
 import {rehype} from 'rehype'
 import rehypeSlug from './index.js'
 
-test('rehypeSlug', function (t) {
+test('rehypeSlug', (t) => {
   t.plan(2)
 
   rehype()
@@ -19,7 +19,7 @@ test('rehypeSlug', function (t) {
         '  <p>sed</p>',
         '</section>'
       ].join('\n'),
-      function (error, file) {
+      (error, file) => {
         t.ifErr(error, 'shouldn’t throw')
 
         t.equal(

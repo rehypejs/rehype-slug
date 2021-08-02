@@ -44,7 +44,7 @@
     "remark-preset-wooorm": "^8.0.0",
     "tape": "^5.0.0",
     "unified": "^10.0.0",
-    "xo": "^0.38.0"
+    "xo": "^0.39.0"
   },
   "scripts": {
     "format": "remark . -qfo && prettier . -w --loglevel warn && xo --fix",
@@ -62,10 +62,6 @@
   },
   "xo": {
     "prettier": true,
-    "rules": {
-      "no-var": "off",
-      "prefer-arrow-callback": "off"
-    },
     "ignores": [
       "types/"
     ]
