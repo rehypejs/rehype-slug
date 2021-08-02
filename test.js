@@ -1,13 +1,13 @@
 import test from 'tape'
-import rehype from 'rehype'
-import slug from './index.js'
+import {rehype} from 'rehype'
+import rehypeSlug from './index.js'
 
-test('slug', function (t) {
+test('rehypeSlug', function (t) {
   t.plan(2)
 
   rehype()
     .data('settings', {fragment: true})
-    .use(slug)
+    .use(rehypeSlug)
     .process(
       [
         '<section>',
