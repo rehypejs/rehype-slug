@@ -1,14 +1,12 @@
-'use strict'
+import Slugger from 'github-slugger'
+import has from 'hast-util-has-property'
+import rank from 'hast-util-heading-rank'
+import toString from 'hast-util-to-string'
+import visit from 'unist-util-visit'
 
-var slugs = require('github-slugger')()
-var has = require('hast-util-has-property')
-var rank = require('hast-util-heading-rank')
-var toString = require('hast-util-to-string')
-var visit = require('unist-util-visit')
+const slugs = new Slugger()
 
-module.exports = slug
-
-function slug() {
+export default function rehypeSlug() {
   return transformer
 }
 

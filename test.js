@@ -1,8 +1,6 @@
-'use strict'
-
-var test = require('tape')
-var rehype = require('rehype')
-var slug = require('.')
+import test from 'tape'
+import rehype from 'rehype'
+import slug from './index.js'
 
 test('slug', function (t) {
   t.plan(2)
@@ -21,8 +19,8 @@ test('slug', function (t) {
         '  <p>sed</p>',
         '</section>'
       ].join('\n'),
-      function (err, file) {
-        t.ifErr(err, 'shouldn’t throw')
+      function (error, file) {
+        t.ifErr(error, 'shouldn’t throw')
 
         t.equal(
           String(file),
