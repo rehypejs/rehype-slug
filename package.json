@@ -1,6 +1,6 @@
 {
   "name": "rehype-slug",
-  "version": "4.0.1",
+  "version": "5.0.0",
   "description": "rehype plugin to add `id` attributes to headings",
   "license": "MIT",
   "keywords": [
