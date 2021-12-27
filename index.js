@@ -13,7 +13,7 @@ const slugs = new Slugger()
 /**
  * Plugin to add `id`s to headings.
  *
- * @type {import('unified').Plugin<[], Root>}
+ * @type {import('unified').Plugin<Array<void>, Root>}
  */
 export default function rehypeSlug() {
   return (tree) => {
