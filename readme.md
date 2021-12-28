@@ -48,10 +48,6 @@ A different plugin, [`rehype-autolink-headings`][rehype-autolink-headings], adds
 links to these headings back to themselves, which is useful as it lets users
 more easily link to particular sections.
 
-This plugins matches how GitHub generates `id`s.
-If you want to generate them differently, you can fork this plugin: it’s pretty
-small!
-
 ## Install
 
 This package is [ESM only](https://gist.github.com/sindresorhus/a39789f98801d908bbc7ff3ecc99d99c).
