@@ -8,54 +8,105 @@
 [![Backers][backers-badge]][collective]
 [![Chat][chat-badge]][chat]
 
-[**rehype**][rehype] plugin to add `id`s to headings.
+**[rehype][]** plugin to add `id`s to headings.
+
+## Contents
+
+*   [What is this?](#what-is-this)
+*   [When should I use this?](#when-should-i-use-this)
+*   [Install](#install)
+*   [Use](#use)
+*   [API](#api)
+    *   [`unified().use(rehypeSlug)`](#unifieduserehypeslug)
+*   [Types](#types)
+*   [Compatibility](#compatibility)
+*   [Security](#security)
+*   [Related](#related)
+*   [Contribute](#contribute)
+*   [License](#license)
+
+## What is this?
+
+This package is a [unified][] ([rehype][]) plugin to add `id`s to headings.
+It looks for headings (so `<h1>` through `<h6>`) that do not yet have `id`s
+and adds `id` attributes to them based on their textual content.
+The algorithm that generates `id`s is [`github-slugger`][github-slugger], which
+matches how GitHub works.
+
+**unified** is a project that transforms content with abstract syntax trees
+(ASTs).
+**rehype** adds support for HTML to unified.
+**hast** is the HTML AST that rehype uses.
+This is a rehype plugin that adds links to headings in the AST.
+
+## When should I use this?
+
+This plugin is useful when you have relatively long documents and you want to be
+able to link to particular sections.
+
+A different plugin, [`rehype-autolink-headings`][rehype-autolink-headings], adds
+links to these headings back to themselves, which is useful as it lets users
+more easily link to particular sections.
 
 ## Install
 
-This package is [ESM only](https://gist.github.com/sindresorhus/a39789f98801d908bbc7ff3ecc99d99c):
-Node 12+ is needed to use it and it must be `import`ed instead of `require`d.
-
-[npm][]:
+This package is [ESM only](https://gist.github.com/sindresorhus/a39789f98801d908bbc7ff3ecc99d99c).
+In Node.js (version 12.20+, 14.14+, or 16.0+), install with [npm][]:
 
 ```sh
 npm install rehype-slug
 ```
 
-## Use
+In Deno with [Skypack][]:
 
-Say we have the following file, `fragment.html`:
+```js
+import rehypeSlug from 'https://cdn.skypack.dev/rehype-slug@5?dts'
+```
+
+In browsers with [Skypack][]:
 
 ```html
-<h1>Lorem ipsum 😪</h1>
-<h2>dolor—sit—amet</h2>
+<script type="module">
+  import rehypeSlug from 'https://cdn.skypack.dev/rehype-slug@5?min'
+</script>
+```
+
+## Use
+
+Say we have the following file `example.html`:
+
+```html
+<h1 id=some-id>Lorem ipsum</h1>
+<h2>Dolor sit amet 😪</h2>
 <h3>consectetur &amp; adipisicing</h3>
 <h4>elit</h4>
 <h5>elit</h5>
 ```
 
-And our script, `example.js`, looks as follows:
+And our module `example.js` looks as follows:
 
 ```js
-import fs from 'node:fs'
+import {read} from 'to-vfile'
 import {rehype} from 'rehype'
-import slug from 'rehype-slug'
+import rehypeSlug from 'rehype-slug'
 
-const buf = fs.readFileSync('fragment.html')
+main()
 
-rehype()
-  .data('settings', {fragment: true})
-  .use(slug)
-  .process(buf)
-  .then((file) => {
-    console.log(String(file))
-  })
+async function main() {
+  const file = await rehype()
+    .data('settings', {fragment: true})
+    .use(rehypeSlug)
+    .process(await read('example.html'))
+
+  console.log(String(file))
+}
 ```
 
-Now, running `node example` yields:
+Now, running `node example.js` yields:
 
 ```html
-<h1 id="lorem-ipsum-">Lorem ipsum 😪</h1>
-<h2 id="dolorsitamet">dolor—sit—amet</h2>
+<h1 id="some-id">Lorem ipsum</h1>
+<h2 id="dolor-sit-amet-">Dolor sit amet 😪</h2>
 <h3 id="consectetur--adipisicing">consectetur &#x26; adipisicing</h3>
 <h4 id="elit">elit</h4>
 <h5 id="elit-1">elit</h5>
@@ -68,24 +119,37 @@ The default export is `rehypeSlug`.
 
 ### `unified().use(rehypeSlug)`
 
-Add `id` properties to h1-h6 headings that don’t already have one.
+Add `id`s to headings.
+There are no options.
 
-Uses [**github-slugger**][ghslug] to create GitHub style `id`s.
+## Types
+
+This package is fully typed with [TypeScript][].
+There are no extra exported types.
+
+## Compatibility
+
+Projects maintained by the unified collective are compatible with all maintained
+versions of Node.js.
+As of now, that is Node.js 12.20+, 14.14+, and 16.0+.
+Our projects sometimes work with older versions, but this is not guaranteed.
+
+This plugin works with `rehype-parse` version 1+, `rehype-stringify` version 1+,
+`rehype` version 1+, and `unified` version 4+.
 
 ## Security
 
 Use of `rehype-slug` can open you up to a [cross-site scripting (XSS)][xss]
-attack as it sets `id` attributes on headings.
-In a browser, elements are retrievable by `id` with JavaScript and CSS.
-If a user injects a heading that slugs to an `id` you are already using,
-the user content may impersonate the website.
-
-Always be wary with user input and use [`rehype-sanitize`][sanitize].
+attack as it sets `id` attributes on headings, which causes what is known
+as “DOM clobbering”.
+Please use [`rehype-sanitize`][rehype-sanitize] and see its
+[Example: headings (DOM clobbering)][rehype-sanitize-example] for information on
+how to properly solve it.
 
 ## Related
 
-*   [`remark-slug`](https://github.com/wooorm/remark-slug)
-    — Add slugs to headings in markdown
+*   [`rehype-autolink-headings`][rehype-autolink-headings]
+    — add links to headings with IDs back to themselves
 
 ## Contribute
 
@@ -131,6 +195,8 @@ abide by its terms.
 
 [npm]: https://docs.npmjs.com/cli/install
 
+[skypack]: https://www.skypack.dev
+
 [health]: https://github.com/rehypejs/.github
 
 [contributing]: https://github.com/rehypejs/.github/blob/HEAD/contributing.md
@@ -143,10 +209,18 @@ abide by its terms.
 
 [author]: https://wooorm.com
 
-[rehype]: https://github.com/rehypejs/rehype
+[typescript]: https://www.typescriptlang.org
 
-[ghslug]: https://github.com/Flet/github-slugger
+[unified]: https://github.com/unifiedjs/unified
+
+[rehype]: https://github.com/rehypejs/rehype
 
 [xss]: https://en.wikipedia.org/wiki/Cross-site_scripting
 
-[sanitize]: https://github.com/rehypejs/rehype-sanitize
+[github-slugger]: https://github.com/Flet/github-slugger
+
+[rehype-autolink-headings]: https://github.com/rehypejs/rehype-autolink-headings
+
+[rehype-sanitize]: https://github.com/rehypejs/rehype-sanitize
+
+[rehype-sanitize-example]: https://github.com/rehypejs/rehype-sanitize#example-headings-dom-clobbering
