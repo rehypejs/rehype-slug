@@ -29,15 +29,15 @@
 
 This package is a [unified][] ([rehype][]) plugin to add `id`s to headings.
 It looks for headings (so `<h1>` through `<h6>`) that do not yet have `id`s
-and adds `id` attributes to them based on their textual content.
-The algorithm that generates `id`s is [`github-slugger`][github-slugger], which
+and adds `id` attributes to them based on the text they contain.
+The algorithm that does this is [`github-slugger`][github-slugger], which
 matches how GitHub works.
 
 **unified** is a project that transforms content with abstract syntax trees
 (ASTs).
 **rehype** adds support for HTML to unified.
 **hast** is the HTML AST that rehype uses.
-This is a rehype plugin that adds links to headings in the AST.
+This is a rehype plugin that adds `id`s to headings in the AST.
 
 ## When should I use this?
 
