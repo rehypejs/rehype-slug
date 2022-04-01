@@ -57,17 +57,17 @@ In Node.js (version 12.20+, 14.14+, or 16.0+), install with [npm][]:
 npm install rehype-slug
 ```
 
-In Deno with [Skypack][]:
+In Deno with [`esm.sh`][esmsh]:
 
 ```js
-import rehypeSlug from 'https://cdn.skypack.dev/rehype-slug@5?dts'
+import rehypeSlug from 'https://esm.sh/rehype-slug@5'
 ```
 
-In browsers with [Skypack][]:
+In browsers with [`esm.sh`][esmsh]:
 
 ```html
 <script type="module">
-  import rehypeSlug from 'https://cdn.skypack.dev/rehype-slug@5?min'
+  import rehypeSlug from 'https://esm.sh/rehype-slug@5?bundle'
 </script>
 ```
 
@@ -195,7 +195,7 @@ abide by its terms.
 
 [npm]: https://docs.npmjs.com/cli/install
 
-[skypack]: https://www.skypack.dev
+[esmsh]: https://esm.sh
 
 [health]: https://github.com/rehypejs/.github
 
