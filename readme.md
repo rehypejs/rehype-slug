@@ -127,8 +127,7 @@ Configuration (optional).
 
 ###### `options.prefix`
 
-String to insert in front of the `id`s (optional).
-By default, an empty string (`''`) is used.
+Prefix to add in front of `id`s (`string`, default: `''`).
 
 ## Types
 
