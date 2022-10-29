@@ -41,7 +41,7 @@ test('rehypeSlug', (t) => {
 
   rehype()
     .data('settings', {fragment: true})
-    .use(rehypeSlug, { prefix: 'test-'})
+    .use(rehypeSlug, {prefix: 'test-'})
     .process(
       [
         '<section>',

@@ -6,7 +6,7 @@
  * @typedef Options
  *   Configuration (optional).
  * @property {string} [prefix='']
- *   Prefix all IDs with this value.
+ *   String to insert in front of the `id`s.
  */
 
 import Slugger from 'github-slugger'
