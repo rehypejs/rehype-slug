@@ -33,7 +33,7 @@
   ],
   "dependencies": {
     "@types/hast": "^2.0.0",
-    "github-slugger": "^1.1.1",
+    "github-slugger": "^2.0.0",
     "hast-util-has-property": "^2.0.0",
     "hast-util-heading-rank": "^2.0.0",
     "hast-util-to-string": "^2.0.0",
@@ -41,7 +41,6 @@
     "unist-util-visit": "^4.0.0"
   },
   "devDependencies": {
-    "@types/github-slugger": "^1.0.0",
     "@types/tape": "^4.0.0",
     "c8": "^7.0.0",
     "prettier": "^2.0.0",
