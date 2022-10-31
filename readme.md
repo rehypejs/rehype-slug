@@ -17,7 +17,7 @@
 *   [Install](#install)
 *   [Use](#use)
 *   [API](#api)
-    *   [`unified().use(rehypeSlug)`](#unifieduserehypeslug)
+    *   [`unified().use(rehypeSlug[, options])`](#unifieduserehypeslug-options)
 *   [Types](#types)
 *   [Compatibility](#compatibility)
 *   [Security](#security)
@@ -117,10 +117,17 @@ Now, running `node example.js` yields:
 This package exports no identifiers.
 The default export is `rehypeSlug`.
 
-### `unified().use(rehypeSlug)`
+### `unified().use(rehypeSlug[, options])`
 
 Add `id`s to headings.
-There are no options.
+
+##### `options`
+
+Configuration (optional).
+
+###### `options.prefix`
+
+Prefix to add in front of `id`s (`string`, default: `''`).
 
 ## Types
 
