@@ -90,16 +90,12 @@ import {read} from 'to-vfile'
 import {rehype} from 'rehype'
 import rehypeSlug from 'rehype-slug'
 
-main()
+const file = await rehype()
+  .data('settings', {fragment: true})
+  .use(rehypeSlug)
+  .process(await read('example.html'))
 
-async function main() {
-  const file = await rehype()
-    .data('settings', {fragment: true})
-    .use(rehypeSlug)
-    .process(await read('example.html'))
-
-  console.log(String(file))
-}
+console.log(String(file))
 ```
 
 Now, running `node example.js` yields:
@@ -132,7 +128,7 @@ Prefix to add in front of `id`s (`string`, default: `''`).
 ## Types
 
 This package is fully typed with [TypeScript][].
-There are no extra exported types.
+It exports the additional type `Options`.
 
 ## Compatibility
 
