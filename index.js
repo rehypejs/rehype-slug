@@ -58,8 +58,6 @@ export default function rehypeSlug(options = {}) {
 
     visit(tree, 'element', (node) => {
       if (headingRank(node) && node.properties && !hasProperty(node, 'id')) {
-        const hmm = toString(node)
-        console.log(`>>> > visit > hmm:`, hmm)
         node.properties.id = prefix + slugger.slug(toString(node))
       }
     })
