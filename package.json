@@ -28,6 +28,7 @@
   "types": "index.d.ts",
   "main": "index.js",
   "files": [
+    "lib/",
     "index.d.ts",
     "index.js"
   ],
