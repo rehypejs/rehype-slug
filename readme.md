@@ -61,14 +61,14 @@ npm install rehype-slug
 In Deno with [`esm.sh`][esmsh]:
 
 ```js
-import rehypeSlug from 'https://esm.sh/rehype-slug@5'
+import rehypeSlug from 'https://esm.sh/rehype-slug@6'
 ```
 
 In browsers with [`esm.sh`][esmsh]:
 
 ```html
 <script type="module">
-  import rehypeSlug from 'https://esm.sh/rehype-slug@5?bundle'
+  import rehypeSlug from 'https://esm.sh/rehype-slug@6?bundle'
 </script>
 ```
 
