@@ -18,6 +18,7 @@
 *   [Use](#use)
 *   [API](#api)
     *   [`unified().use(rehypeSlug[, options])`](#unifieduserehypeslug-options)
+    *   [`Options`](#options)
 *   [Types](#types)
 *   [Compatibility](#compatibility)
 *   [Security](#security)
@@ -50,8 +51,8 @@ more easily link to particular sections.
 
 ## Install
 
-This package is [ESM only](https://gist.github.com/sindresorhus/a39789f98801d908bbc7ff3ecc99d99c).
-In Node.js (version 12.20+, 14.14+, or 16.0+), install with [npm][]:
+This package is [ESM only][esm].
+In Node.js (version 16+), install with [npm][]:
 
 ```sh
 npm install rehype-slug
@@ -83,7 +84,7 @@ Say we have the following file `example.html`:
 <h5>elit</h5>
 ```
 
-And our module `example.js` looks as follows:
+…and our module `example.js` looks as follows:
 
 ```js
 import {read} from 'to-vfile'
@@ -98,7 +99,7 @@ const file = await rehype()
 console.log(String(file))
 ```
 
-Now, running `node example.js` yields:
+…then running `node example.js` yields:
 
 ```html
 <h1 id="some-id">Lorem ipsum</h1>
@@ -111,31 +112,44 @@ Now, running `node example.js` yields:
 ## API
 
 This package exports no identifiers.
-The default export is `rehypeSlug`.
+The default export is [`rehypeSlug`][api-rehype-slug].
 
 ### `unified().use(rehypeSlug[, options])`
 
 Add `id`s to headings.
 
-##### `options`
+###### Parameters
 
-Configuration (optional).
+*   `options` ([`Options`][api-options], optional)
+    — configuration
 
-###### `options.prefix`
+###### Returns
 
-Prefix to add in front of `id`s (`string`, default: `''`).
+Transform ([`Transformer`][unified-transformer]).
+
+### `Options`
+
+Configuration (TypeScript type).
+
+###### Fields
+
+*   `prefix` (`string`, default: `''`)
+    — prefix to add in front of `id`s
 
 ## Types
 
 This package is fully typed with [TypeScript][].
-It exports the additional type `Options`.
+It exports the additional type [`Options`][api-options].
 
 ## Compatibility
 
-Projects maintained by the unified collective are compatible with all maintained
+Projects maintained by the unified collective are compatible with maintained
 versions of Node.js.
-As of now, that is Node.js 12.20+, 14.14+, and 16.0+.
-Our projects sometimes work with older versions, but this is not guaranteed.
+
+When we cut a new major release, we drop support for unmaintained versions of
+Node.
+This means we try to keep the current release line, `rehype-slug@^5`,
+compatible with Node.js 12.
 
 This plugin works with `rehype-parse` version 1+, `rehype-stringify` version 1+,
 `rehype` version 1+, and `unified` version 4+.
@@ -182,9 +196,9 @@ abide by its terms.
 
 [downloads]: https://www.npmjs.com/package/rehype-slug
 
-[size-badge]: https://img.shields.io/bundlephobia/minzip/rehype-slug.svg
+[size-badge]: https://img.shields.io/bundlejs/size/rehype-slug
 
-[size]: https://bundlephobia.com/result?p=rehype-slug
+[size]: https://bundlejs.com/?q=rehype-slug
 
 [sponsors-badge]: https://opencollective.com/unified/sponsors/badge.svg
 
@@ -198,32 +212,40 @@ abide by its terms.
 
 [npm]: https://docs.npmjs.com/cli/install
 
+[esm]: https://gist.github.com/sindresorhus/a39789f98801d908bbc7ff3ecc99d99c
+
 [esmsh]: https://esm.sh
 
 [health]: https://github.com/rehypejs/.github
 
-[contributing]: https://github.com/rehypejs/.github/blob/HEAD/contributing.md
+[contributing]: https://github.com/rehypejs/.github/blob/main/contributing.md
 
-[support]: https://github.com/rehypejs/.github/blob/HEAD/support.md
+[support]: https://github.com/rehypejs/.github/blob/main/support.md
 
-[coc]: https://github.com/rehypejs/.github/blob/HEAD/code-of-conduct.md
+[coc]: https://github.com/rehypejs/.github/blob/main/code-of-conduct.md
 
 [license]: license
 
 [author]: https://wooorm.com
 
-[typescript]: https://www.typescriptlang.org
-
-[unified]: https://github.com/unifiedjs/unified
+[github-slugger]: https://github.com/Flet/github-slugger
 
 [rehype]: https://github.com/rehypejs/rehype
-
-[xss]: https://en.wikipedia.org/wiki/Cross-site_scripting
-
-[github-slugger]: https://github.com/Flet/github-slugger
 
 [rehype-autolink-headings]: https://github.com/rehypejs/rehype-autolink-headings
 
 [rehype-sanitize]: https://github.com/rehypejs/rehype-sanitize
 
 [rehype-sanitize-example]: https://github.com/rehypejs/rehype-sanitize#example-headings-dom-clobbering
+
+[typescript]: https://www.typescriptlang.org
+
+[unified]: https://github.com/unifiedjs/unified
+
+[unified-transformer]: https://github.com/unifiedjs/unified#transformer
+
+[xss]: https://en.wikipedia.org/wiki/Cross-site_scripting
+
+[api-options]: #options
+
+[api-rehype-slug]: #unifieduserehypeslug-options
