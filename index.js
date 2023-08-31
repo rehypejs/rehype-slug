@@ -6,30 +6,41 @@
  * @typedef Options
  *   Configuration (optional).
  * @property {string} [prefix='']
- *   Prefix to add in front of `id`s.
+ *   Prefix to add in front of `id`s (default: `''`).
  */
 
-import Slugger from 'github-slugger'
-import {hasProperty} from 'hast-util-has-property'
+import GithubSlugger from 'github-slugger'
 import {headingRank} from 'hast-util-heading-rank'
 import {toString} from 'hast-util-to-string'
 import {visit} from 'unist-util-visit'
 
-const slugs = new Slugger()
+/** @type {Options} */
+const emptyOptions = {}
+const slugs = new GithubSlugger()
 
 /**
- * Plugin to add `id`s to headings.
+ * Add `id`s to headings.
  *
- * @type {import('unified').Plugin<[Options?]|Array<void>, Root>}
+ * @param {Options | null | undefined} [options]
+ *   Configuration (optional).
+ * @returns
+ *   Transform.
  */
-export default function rehypeSlug(options = {}) {
-  const prefix = options.prefix || ''
+export default function rehypeSlug(options) {
+  const settings = options || emptyOptions
+  const prefix = settings.prefix || ''
 
-  return (tree) => {
+  /**
+   * @param {Root} tree
+   *   Tree.
+   * @returns {undefined}
+   *   Nothing.
+   */
+  return function (tree) {
     slugs.reset()
 
-    visit(tree, 'element', (node) => {
-      if (headingRank(node) && node.properties && !hasProperty(node, 'id')) {
+    visit(tree, 'element', function (node) {
+      if (headingRank(node) && !node.properties.id) {
         node.properties.id = prefix + slugs.slug(toString(node))
       }
     })

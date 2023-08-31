@@ -34,10 +34,8 @@
   "dependencies": {
     "@types/hast": "^3.0.0",
     "github-slugger": "^2.0.0",
-    "hast-util-has-property": "^3.0.0",
     "hast-util-heading-rank": "^3.0.0",
     "hast-util-to-string": "^3.0.0",
-    "unified": "^11.0.0",
     "unist-util-visit": "^5.0.0"
   },
   "devDependencies": {
